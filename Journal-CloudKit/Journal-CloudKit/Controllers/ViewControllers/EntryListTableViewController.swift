@@ -15,14 +15,19 @@ class EntryListTableViewController: UITableViewController {
         super.viewDidLoad()
         
         EntryController.sharedInstance.fetchAllEntries { (result) in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+            self.updateViews()
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         tableView.reloadData()
+    }
+    
+    // MARK: - Class Methods
+    func updateViews() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
@@ -45,7 +50,12 @@ class EntryListTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        
-        
+        if segue.identifier == "toEditEntry" {
+            guard let indexPath = tableView.indexPathForSelectedRow,
+                let destinationVC = segue.destination as? EntryDetailViewController else {return}
+            
+            let entryToSend = EntryController.sharedInstance.entries[indexPath.row]
+            destinationVC.entry = entryToSend
+        }
     }
-}
+} // End of class 

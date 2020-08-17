@@ -27,6 +27,7 @@ class EntryDetailViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
         
         titleTextField.delegate = self
     }
@@ -45,7 +46,7 @@ class EntryDetailViewController: UIViewController {
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let title = titleTextField.text, !title.isEmpty, let bodyText = bodyTextView.text, !bodyText.isEmpty else {return}
         
-        EntryController.sharedInstance.saveEntry(with: title, bodyText: bodyText) { (result) in
+        EntryController.sharedInstance.creatEntry(with: title, bodyText: bodyText) { (result) in
             DispatchQueue.main.async {
                 self.navigationController?.popViewController(animated: true)
             }

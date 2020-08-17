@@ -22,11 +22,16 @@ class EntryController {
     
     // MARK: - Functions
     
-    func saveEntry(with title: String, bodyText: String, completion: @escaping (Result<Entry?, EntryError>) -> Void) {
+    func creatEntry(with title: String, bodyText: String, completion: @escaping (Result<Entry?, EntryError>) -> Void) {
         
         let newEntry = Entry(title: title, bodyText: bodyText)
         
-        let entryRecord = CKRecord(entry: newEntry)
+        save(entry: newEntry, completion: completion)
+    }
+    
+    func save(entry: Entry, completion: @escaping (Result<Entry?, EntryError>) -> Void) {
+        
+        let entryRecord = CKRecord(entry: entry)
         
         privateDB.save(entryRecord) { (record, error) in
             

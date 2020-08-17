@@ -39,6 +39,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="dHJ-Lf-ANK" kind="show" identifier="toEditEntry" id="m7R-56-tV9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -49,7 +52,7 @@
                     <navigationItem key="navigationItem" id="8iC-Xs-yI9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="deh-2B-dTR">
                             <connections>
-                                <segue destination="dHJ-Lf-ANK" kind="show" identifier="toDetailVC" id="ats-Oy-lOc"/>
+                                <segue destination="dHJ-Lf-ANK" kind="show" identifier="toAddEntry" id="ats-Oy-lOc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -66,32 +69,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9i2-Ei-sSn">
-                                <rect key="frame" x="20" y="115" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ecS-Np-c2S">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter your journal entry here.." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ecS-Np-c2S">
                                 <rect key="frame" x="20" y="177" width="374" height="388"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="388" id="y8g-hE-yZM"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1tO-69-JCv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1tO-69-JCv">
                                 <rect key="frame" x="189" y="667" width="36" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Clear"/>
                                 <connections>
                                     <action selector="clearButtonTapped:" destination="dHJ-Lf-ANK" eventType="touchUpInside" id="AE0-f3-Rfw"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9i2-Ei-sSn">
+                                <rect key="frame" x="20" y="115" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="9i2-Ei-sSn" firstAttribute="leading" secondItem="STV-Ym-6Cw" secondAttribute="leadingMargin" id="2yD-0C-e8y"/>
+                            <constraint firstItem="ecS-Np-c2S" firstAttribute="trailing" secondItem="9i2-Ei-sSn" secondAttribute="trailing" id="AiN-Lh-v2D"/>
+                            <constraint firstItem="9i2-Ei-sSn" firstAttribute="centerX" secondItem="1tO-69-JCv" secondAttribute="centerX" id="B42-ft-UIs"/>
+                            <constraint firstItem="9i2-Ei-sSn" firstAttribute="top" secondItem="2fY-mm-YLY" secondAttribute="top" constant="27" id="McZ-aA-Vfg"/>
+                            <constraint firstItem="2fY-mm-YLY" firstAttribute="bottom" secondItem="1tO-69-JCv" secondAttribute="bottom" constant="165" id="ZIl-Jk-an3"/>
+                            <constraint firstItem="9i2-Ei-sSn" firstAttribute="leading" secondItem="ecS-Np-c2S" secondAttribute="leading" id="bpi-EF-w78"/>
+                            <constraint firstItem="ecS-Np-c2S" firstAttribute="top" secondItem="9i2-Ei-sSn" secondAttribute="bottom" constant="28" id="t1O-2t-v9Y"/>
+                            <constraint firstItem="9i2-Ei-sSn" firstAttribute="trailing" secondItem="STV-Ym-6Cw" secondAttribute="trailingMargin" id="vv8-Bw-kln"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2fY-mm-YLY"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Eeo-6L-O4W" appends="YES" id="fAx-gO-0OG"/>
@@ -137,4 +149,7 @@
             <point key="canvasLocation" x="-31.884057971014496" y="16.741071428571427"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="m7R-56-tV9"/>
+    </inferredMetricsTieBreakers>
 </document>
