@@ -16,6 +16,9 @@
 		4B5674C924EB222F00F4DA47 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5674C824EB222F00F4DA47 /* Entry.swift */; };
 		4B5674CB24EB276100F4DA47 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5674CA24EB276100F4DA47 /* EntryController.swift */; };
 		4B5674CD24EB291B00F4DA47 /* EntryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5674CC24EB291B00F4DA47 /* EntryError.swift */; };
+		4B5674CF24EB2ED600F4DA47 /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5674CE24EB2ED600F4DA47 /* EntryListTableViewController.swift */; };
+		4B5674D124EB2F7100F4DA47 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5674D024EB2F7100F4DA47 /* DateExtension.swift */; };
+		4B5674D324EB311F00F4DA47 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5674D224EB311F00F4DA47 /* EntryDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		4B5674C824EB222F00F4DA47 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		4B5674CA24EB276100F4DA47 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		4B5674CC24EB291B00F4DA47 /* EntryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryError.swift; sourceTree = "<group>"; };
+		4B5674CE24EB2ED600F4DA47 /* EntryListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListTableViewController.swift; sourceTree = "<group>"; };
+		4B5674D024EB2F7100F4DA47 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		4B5674D224EB311F00F4DA47 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,8 @@
 		4B5674C424EB133000F4DA47 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4B5674CE24EB2ED600F4DA47 /* EntryListTableViewController.swift */,
+				4B5674D224EB311F00F4DA47 /* EntryDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -139,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				4B5674CC24EB291B00F4DA47 /* EntryError.swift */,
+				4B5674D024EB2F7100F4DA47 /* DateExtension.swift */,
 			);
 			path = "Helpers+Extensions";
 			sourceTree = "<group>";
@@ -215,9 +224,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B5674C924EB222F00F4DA47 /* Entry.swift in Sources */,
+				4B5674D124EB2F7100F4DA47 /* DateExtension.swift in Sources */,
 				4B5674CD24EB291B00F4DA47 /* EntryError.swift in Sources */,
+				4B5674CF24EB2ED600F4DA47 /* EntryListTableViewController.swift in Sources */,
 				4B5674AA24EB12C200F4DA47 /* AppDelegate.swift in Sources */,
 				4B5674CB24EB276100F4DA47 /* EntryController.swift in Sources */,
+				4B5674D324EB311F00F4DA47 /* EntryDetailViewController.swift in Sources */,
 				4B5674AC24EB12C200F4DA47 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
