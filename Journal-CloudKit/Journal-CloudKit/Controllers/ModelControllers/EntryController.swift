@@ -45,6 +45,8 @@ class EntryController {
             
             print("Saved Entry successfully.")
             
+            self.entries.insert(savedEntry, at: 0)
+            
             completion(.success(savedEntry))
         }
     }
